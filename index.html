@@ -1,0 +1,90 @@
+<!--Diz ao navegador: "Use o HTML5 moderno, não o antigo"-->
+<!DOCTYPE html>
+<!--Acessibilidade e SEO: idioma da pagina-->
+<html lang="pt-BR">
+
+<head>
+    <!--CÉREBRO DA PÁGINA (O usuário não vê)-->
+    <meta charset="UTF-8">
+    <!--Permite acentuação (ç, ã, é)-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria Napoli</title>
+
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+
+<!--CORPO DA PÁGINA (O que aparece na tela)-->
+<body>
+
+    <!-- Header (Cabeçalho) -->
+    <header class="cabecalho-principal">
+
+        <!-- Logo -->
+        <div class="logo">
+            <img src="logo.png" alt="Logo da Pizzaria" width="100" height="100"> <!-- Alinhamento à esquerda -->
+        </div>
+
+        <!-- Menu de Navegação -->
+        <nav class="menu-navegacao">
+            <ul> <!-- Lista não ordenada -->
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+
+        <!-- Ícone de Menu Hamburger (representação) -->
+        <div class="menu-hamburger">
+            <span>☰</span> <!-- Colocar elemento, símbolos, destacar -->
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        
+        <h1>Menu</h1>
+
+        <!-- Seção de Opções -->
+        <section class="secao-opcoes">
+
+            <!-- 1º Opção -->
+            <article class="opcao-item">
+                <!-- Placeholder da imagem (círculo no wireframe) -->
+                <div class="imagem-pizza">
+                    <img src="pepperoni.png" alt="Pizza de Pepperoni Especial" width="150" height="150">
+                </div>
+                <h2>Pepperoni Especial</h2>
+                <p>Ingredientes: Pepperoni, queijo mussarela, tomate cereja, molho de tomate, azeitona. </p>
+                <button>Pedir</button>
+            </article>
+
+            <!-- 2º Opção -->
+            <article class="opcao-item">
+                <div class="imagem-pizza">
+                    <img src="frango-supreme.png" alt="Pizza de Frango Supreme" width="150" height="150">
+                </div>
+                <h2>Frango Supreme</h2>
+                <p>Ingredientes: Frango, queijo mussarela, tomate, molho de tomate, orégano.</p>
+                <button>Pedir</button>
+            </article>
+
+            <!-- 3º Opção -->
+            <article class="opcao-item">
+                <div class="imagem-pizza">
+                    <img src="quatro-queijos.png" alt="Pizza de Quatro Queijos" width="150" height="150">
+                </div>
+                <h2>Quatro Queijos</h2>
+                <p>Ingredientes: Queijo gorgonzola, queijo parmesão, queijo mussarela, queijo provolone.</p>
+                <button>Pedir</button>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer (Rodapé) -->
+    <footer class="rodape-principal">
+        <p>&copy; 2026 Pizzaria Napoli</p>
+    </footer>
+
+</body>
+
+</html>
