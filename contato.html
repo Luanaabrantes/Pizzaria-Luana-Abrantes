@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Pizzaria Napoli</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <header class="cabecalho-principal">
+        <a class="logo" href="index.html" aria-label="Página inicial da Pizzaria Napoli">
+            <img src="images/logo.png" alt="Logo da Pizzaria Napoli" width="84" height="84">
+            <span>Pizzaria Napoli</span>
+        </a>
+
+        <nav class="menu-navegacao" aria-label="Navegação principal">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#menu">Menu</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-hamburger" type="button" aria-label="Abrir menu">
+            <span>&#9776;</span>
+        </button>
+    </header>
+
+    <main>
+        <section class="secao-contato" id="contato" aria-labelledby="titulo-contato">
+            <div class="conteudo-contato">
+                <div class="cabecalho-contato">
+                    <p class="etiqueta">Fale conosco</p>
+                    <h1 id="titulo-contato">Contato</h1>
+                    <p>Envie sua mensagem para a Pizzaria Napoli. Retornaremos assim que possível.</p>
+                </div>
+
+                <form id="form-contato" class="form-contato" novalidate>
+                    <label for="contato-nome">
+                        Nome
+                        <input id="contato-nome" name="nome" type="text" autocomplete="name" aria-describedby="erro-nome">
+                        <small class="mensagem-erro" id="erro-nome"></small>
+                    </label>
+
+                    <label for="contato-email">
+                        E-mail
+                        <input id="contato-email" name="email" type="email" autocomplete="email" aria-describedby="erro-email">
+                        <small class="mensagem-erro" id="erro-email"></small>
+                    </label>
+
+                    <label for="contato-mensagem">
+                        Mensagem
+                        <textarea id="contato-mensagem" name="mensagem" rows="5" aria-describedby="erro-mensagem"></textarea>
+                        <small class="mensagem-erro" id="erro-mensagem"></small>
+                    </label>
+
+                    <button id="botao-enviar-contato" class="botao-finalizar botao-contato" type="submit" disabled>Enviar mensagem</button>
+                    <p id="mensagem-sucesso" class="mensagem-sucesso"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape-principal">
+        <p>&copy; 2026 Pizzaria Napoli. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>

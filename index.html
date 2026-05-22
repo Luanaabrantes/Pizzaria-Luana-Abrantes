@@ -1,88 +1,252 @@
-<!--Diz ao navegador: "Use o HTML5 moderno, não o antigo"-->
 <!DOCTYPE html>
-<!--Acessibilidade e SEO: idioma da pagina-->
 <html lang="pt-BR">
 
 <head>
-    <!--CÉREBRO DA PÁGINA (O usuário não vê)-->
     <meta charset="UTF-8">
-    <!--Permite acentuação (ç, ã, é)-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizzaria Napoli</title>
-
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/script.js" defer></script>
 </head>
 
-<!--CORPO DA PÁGINA (O que aparece na tela)-->
 <body>
-
-    <!-- Header (Cabeçalho) -->
     <header class="cabecalho-principal">
+        <a class="logo" href="index.html" aria-label="Página inicial da Pizzaria Napoli">
+            <img src="images/logo.png" alt="Logo da Pizzaria Napoli" width="84" height="84">
+            <span>Pizzaria Napoli</span>
+        </a>
 
-        <!-- Logo -->
-        <div class="logo">
-            <img src="logo.png" alt="Logo da Pizzaria" width="100" height="100"> <!-- Alinhamento à esquerda -->
-        </div>
-
-        <!-- Menu de Navegação -->
-        <nav class="menu-navegacao">
-            <ul> <!-- Lista não ordenada -->
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Contato</a></li>
+        <nav class="menu-navegacao" aria-label="Navegação principal">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#menu">Menu</a></li>
+                <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
 
-        <!-- Ícone de Menu Hamburger (representação) -->
-        <div class="menu-hamburger">
-            <span>☰</span> <!-- Colocar elemento, símbolos, destacar -->
-        </div>
+        <button class="menu-hamburger" type="button" aria-label="Abrir menu">
+            <span>&#9776;</span>
+        </button>
     </header>
 
-    <!-- Conteúdo Principal -->
-    <main>
-        
-        <h1>Menu</h1>
+    <main class="conteudo-principal">
+        <section class="area-menu" id="menu" aria-labelledby="titulo-menu">
+            <div class="cabecalho-menu">
+                <p class="etiqueta">Delivery artesanal</p>
+                <h1 id="titulo-menu">Escolha sua pizza</h1>
+                <p>Sabores clássicos, ingredientes frescos e preparo feito para chegar quentinho na sua mesa.</p>
+            </div>
 
-        <!-- Seção de Opções -->
-        <section class="secao-opcoes">
+            <div class="barra-categorias" aria-label="Filtrar produtos por categoria">
+                <button class="botao-categoria ativo" type="button" data-categoria="todos">Todos</button>
+                <button class="botao-categoria" type="button" data-categoria="tradicionais">Tradicionais</button>
+                <button class="botao-categoria" type="button" data-categoria="especiais">Especiais</button>
+                <button class="botao-categoria" type="button" data-categoria="doces">Doces</button>
+                <button class="botao-categoria" type="button" data-categoria="bebidas">Bebidas</button>
+            </div>
 
-            <!-- 1º Opção -->
-            <article class="opcao-item">
-                <!-- Placeholder da imagem (círculo no wireframe) -->
-                <div class="imagem-pizza">
-                    <img src="pepperoni.png" alt="Pizza de Pepperoni Especial" width="150" height="150">
-                </div>
-                <h2>Pepperoni Especial</h2>
-                <p>Ingredientes: Pepperoni, queijo mussarela, tomate cereja, molho de tomate, azeitona. </p>
-                <button>Pedir</button>
-            </article>
+            <div class="grade-pizzas">
+                <article class="card-pizza" data-categoria="especiais">
+                    <div class="imagem-pizza">
+                        <img src="images/pepperoni.png" alt="Pizza de Pepperoni Especial" width="180" height="180">
+                    </div>
+                    <div class="conteudo-card">
+                        <h2>Pepperoni Especial</h2>
+                        <p>Pepperoni, mussarela, tomate cereja, molho de tomate e azeitona.</p>
+                        <div class="rodape-card">
+                            <strong class="preco-pizza">R$ 49,90</strong>
+                            <button class="botao-pedir" data-id="pepperoni" data-nome="Pepperoni Especial" data-preco="49.90">
+                                Adicionar ao carrinho
+                            </button>
+                            <div class="controle-quantidade" data-id="pepperoni" hidden>
+                                <button type="button" class="botao-quantidade" data-acao="diminuir" data-id="pepperoni" aria-label="Diminuir quantidade de Pepperoni Especial">-</button>
+                                <span class="quantidade-card">1</span>
+                                <button type="button" class="botao-quantidade" data-acao="aumentar" data-id="pepperoni" aria-label="Aumentar quantidade de Pepperoni Especial">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
-            <!-- 2º Opção -->
-            <article class="opcao-item">
-                <div class="imagem-pizza">
-                    <img src="frango-supreme.png" alt="Pizza de Frango Supreme" width="150" height="150">
-                </div>
-                <h2>Frango Supreme</h2>
-                <p>Ingredientes: Frango, queijo mussarela, tomate, molho de tomate, orégano.</p>
-                <button>Pedir</button>
-            </article>
+                <article class="card-pizza" data-categoria="tradicionais">
+                    <div class="imagem-pizza">
+                        <img src="images/frango-supreme.png" alt="Pizza de Frango Supreme" width="180" height="180">
+                    </div>
+                    <div class="conteudo-card">
+                        <h2>Frango Supreme</h2>
+                        <p>Frango temperado, mussarela, tomate, molho de tomate e orégano.</p>
+                        <div class="rodape-card">
+                            <strong class="preco-pizza">R$ 44,90</strong>
+                            <button class="botao-pedir" data-id="frango" data-nome="Frango Supreme" data-preco="44.90">
+                                Adicionar ao carrinho
+                            </button>
+                            <div class="controle-quantidade" data-id="frango" hidden>
+                                <button type="button" class="botao-quantidade" data-acao="diminuir" data-id="frango" aria-label="Diminuir quantidade de Frango Supreme">-</button>
+                                <span class="quantidade-card">1</span>
+                                <button type="button" class="botao-quantidade" data-acao="aumentar" data-id="frango" aria-label="Aumentar quantidade de Frango Supreme">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
-            <!-- 3º Opção -->
-            <article class="opcao-item">
-                <div class="imagem-pizza">
-                    <img src="quatro-queijos.png" alt="Pizza de Quatro Queijos" width="150" height="150">
-                </div>
-                <h2>Quatro Queijos</h2>
-                <p>Ingredientes: Queijo gorgonzola, queijo parmesão, queijo mussarela, queijo provolone.</p>
-                <button>Pedir</button>
-            </article>
+                <article class="card-pizza" data-categoria="tradicionais">
+                    <div class="imagem-pizza">
+                        <img src="images/quatro-queijos.png" alt="Pizza de Quatro Queijos" width="180" height="180">
+                    </div>
+                    <div class="conteudo-card">
+                        <h2>Quatro Queijos</h2>
+                        <p>Gorgonzola, parmesão, mussarela e provolone com massa crocante.</p>
+                        <div class="rodape-card">
+                            <strong class="preco-pizza">R$ 47,90</strong>
+                            <button class="botao-pedir" data-id="quatro-queijos" data-nome="Quatro Queijos" data-preco="47.90">
+                                Adicionar ao carrinho
+                            </button>
+                            <div class="controle-quantidade" data-id="quatro-queijos" hidden>
+                                <button type="button" class="botao-quantidade" data-acao="diminuir" data-id="quatro-queijos" aria-label="Diminuir quantidade de Quatro Queijos">-</button>
+                                <span class="quantidade-card">1</span>
+                                <button type="button" class="botao-quantidade" data-acao="aumentar" data-id="quatro-queijos" aria-label="Aumentar quantidade de Quatro Queijos">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <p id="mensagem-filtro" class="mensagem-filtro" hidden>Nenhum item disponível nesta categoria ainda.</p>
         </section>
+
+        <aside class="secao-carrinho" aria-labelledby="titulo-carrinho">
+            <div class="cabecalho-carrinho">
+                <div>
+                    <p class="etiqueta">Seu pedido</p>
+                    <h2 id="titulo-carrinho">Carrinho</h2>
+                </div>
+                <span id="contador-carrinho" class="contador-carrinho">0 itens</span>
+            </div>
+
+            <ul id="lista-carrinho" class="lista-carrinho"></ul>
+            <p id="mensagem-carrinho" class="mensagem-carrinho">Seu carrinho está vazio.</p>
+
+            <div class="resumo-carrinho">
+                <div class="linha-resumo">
+                    <span>Subtotal</span>
+                    <strong id="subtotal-carrinho">R$ 0,00</strong>
+                </div>
+                <div class="linha-resumo">
+                    <span>Entrega</span>
+                    <strong id="taxa-entrega">R$ 0,00</strong>
+                </div>
+                <div class="linha-resumo linha-total">
+                    <span>Total</span>
+                    <strong id="total-carrinho">R$ 0,00</strong>
+                </div>
+            </div>
+
+            <button id="botao-revisar" class="botao-finalizar" type="button">Revisar pedido</button>
+        </aside>
     </main>
 
-    <!-- Footer (Rodapé) -->
+    <div id="modal-revisao" class="modal" aria-labelledby="titulo-revisao" aria-hidden="true">
+        <form id="form-revisao" class="conteudo-modal">
+            <div class="cabecalho-modal">
+                <div>
+                    <p class="etiqueta">Revise seu pedido</p>
+                    <h2 id="titulo-revisao">Carrinho e entrega</h2>
+                </div>
+                <button class="botao-fechar" type="button" data-fechar-revisao aria-label="Fechar revisão">&times;</button>
+            </div>
+
+            <div class="grid-revisao">
+                <section class="bloco-revisao" aria-labelledby="titulo-itens-revisao">
+                    <h3 id="titulo-itens-revisao">Itens selecionados</h3>
+                    <ul id="lista-revisao" class="lista-carrinho lista-revisao"></ul>
+                    <p id="mensagem-revisao" class="mensagem-carrinho">Seu carrinho está vazio.</p>
+                </section>
+
+                <section class="bloco-revisao" aria-labelledby="titulo-entrega">
+                    <h3 id="titulo-entrega">Entrega</h3>
+                    <div class="campos-formulario">
+                        <label>
+                            Nome
+                            <input id="cliente-nome" name="nome" type="text" autocomplete="name" required>
+                        </label>
+                        <label>
+                            Telefone
+                            <input id="cliente-telefone" name="telefone" type="tel" autocomplete="tel" required>
+                        </label>
+                        <label>
+                            Endereço de entrega
+                            <input id="cliente-endereco" name="endereco" type="text" autocomplete="street-address" required>
+                        </label>
+                        <label>
+                            Complemento
+                            <input id="cliente-complemento" name="complemento" type="text" autocomplete="address-line2">
+                        </label>
+                    </div>
+                </section>
+
+                <section class="bloco-revisao" aria-labelledby="titulo-pagamento">
+                    <h3 id="titulo-pagamento">Forma de pagamento</h3>
+                    <div class="opcoes-pagamento">
+                        <label>
+                            <input type="radio" name="pagamento" value="Pix" required>
+                            Pix
+                        </label>
+                        <label>
+                            <input type="radio" name="pagamento" value="Cartão de crédito">
+                            Cartão de crédito
+                        </label>
+                        <label>
+                            <input type="radio" name="pagamento" value="Cartão de débito">
+                            Cartão de débito
+                        </label>
+                        <label>
+                            <input type="radio" name="pagamento" value="Dinheiro">
+                            Dinheiro
+                        </label>
+                    </div>
+                </section>
+
+                <section class="bloco-revisao resumo-modal" aria-labelledby="titulo-resumo-revisao">
+                    <h3 id="titulo-resumo-revisao">Resumo</h3>
+                    <div class="resumo-carrinho">
+                        <div class="linha-resumo">
+                            <span>Subtotal</span>
+                            <strong id="subtotal-revisao">R$ 0,00</strong>
+                        </div>
+                        <div class="linha-resumo">
+                            <span>Entrega</span>
+                            <strong id="taxa-revisao">R$ 0,00</strong>
+                        </div>
+                        <div class="linha-resumo linha-total">
+                            <span>Total</span>
+                            <strong id="total-revisao">R$ 0,00</strong>
+                        </div>
+                    </div>
+                    <button id="botao-finalizar" class="botao-finalizar" type="submit">Finalizar pedido</button>
+                </section>
+            </div>
+        </form>
+    </div>
+
+    <div id="modal-confirmacao" class="modal modal-confirmacao" aria-labelledby="titulo-confirmacao" aria-hidden="true">
+        <div class="conteudo-modal">
+            <div class="cabecalho-modal">
+                <div>
+                    <p class="etiqueta">Confirme os dados</p>
+                    <h2 id="titulo-confirmacao">Confirmar pedido</h2>
+                </div>
+                <button class="botao-fechar" type="button" data-fechar-confirmacao aria-label="Fechar confirmação">&times;</button>
+            </div>
+
+            <div id="resumo-confirmacao" class="resumo-confirmacao"></div>
+
+            <div class="acoes-confirmacao">
+                <button id="botao-voltar-revisao" class="botao-secundario" type="button">Voltar e editar</button>
+                <button id="botao-confirmar-pedido" class="botao-finalizar" type="button">Confirmar pedido</button>
+            </div>
+        </div>
+    </div>
+
     <footer class="rodape-principal">
-        <p>&copy; 2026 Pizzaria Napoli</p>
+        <p>&copy; 2026 Pizzaria Napoli. Todos os direitos reservados.</p>
     </footer>
 
 </body>
